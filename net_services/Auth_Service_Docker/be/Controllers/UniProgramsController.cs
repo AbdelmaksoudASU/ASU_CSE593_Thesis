@@ -47,7 +47,8 @@ namespace be.Controllers
             var response = await _httpClient.GetAsync(
                 $"{_settings.ServiceURLS["ProfileService"]}/Profile/{ProfileID}/check_accessibilty/{type}/{id}");
             response.EnsureSuccessStatusCode();
-            var result = await response.Content.ReadFromJsonAsync<JObject>();
+            var result_str = await response.Content.ReadAsStringAsync();
+            var result = JsonConvert.DeserializeObject<JObject>(result_str);
             if ((string)result["status"] == "success" && (bool)result["result"])
             {
                 var json = JsonConvert.SerializeObject(data);
@@ -77,7 +78,8 @@ namespace be.Controllers
             var response = await _httpClient.GetAsync(
                 $"{_settings.ServiceURLS["ProfileService"]}/Profile/{ProfileID}/check_accessibilty/{type}/{id}");
             response.EnsureSuccessStatusCode();
-            var result = await response.Content.ReadFromJsonAsync<JObject>();
+            var result_str = await response.Content.ReadAsStringAsync();
+            var result = JsonConvert.DeserializeObject<JObject>(result_str);
             if ((string)result["status"] == "success" && (bool)result["result"])
             {
                 var json = JsonConvert.SerializeObject(newdata);
@@ -112,8 +114,8 @@ namespace be.Controllers
         public async Task<IActionResult> FilterEducationalEntities(string type, [FromBody] object data)
         {
             var newdata = JsonConvert.DeserializeObject<JObject>(data.ToString());
-            var content = new StringContent(JsonConvert.SerializeObject(newdata));
-            content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            var content = new StringContent(JsonConvert.SerializeObject(newdata), Encoding.UTF8, "application/json");
+            //content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
             var response = await _httpClient.PostAsync($"{_baseUrl}/EducationalEntityWithFilter/{type}", content);
 
             return Ok(await response.Content.ReadAsStringAsync());
@@ -133,7 +135,8 @@ namespace be.Controllers
             var response = await _httpClient.GetAsync(
                 $"{_settings.ServiceURLS["ProfileService"]}/Profile/{ProfileID}/check_accessibilty/{type}/{id}");
             response.EnsureSuccessStatusCode();
-            var result = await response.Content.ReadFromJsonAsync<JObject>();
+            var result_str = await response.Content.ReadAsStringAsync();
+            var result = JsonConvert.DeserializeObject<JObject>(result_str);
             if ((string)result["status"] == "success" && (bool)result["result"])
             {
                 response = await _httpClient.DeleteAsync($"{_baseUrl}/EducationalEntity/{type}/{id}");

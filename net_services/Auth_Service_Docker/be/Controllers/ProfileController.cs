@@ -15,7 +15,7 @@ namespace be.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    //[Authorize]
+    [Authorize]
 
     public class ProfileController : ControllerBase
     {
@@ -54,7 +54,10 @@ namespace be.Controllers
             string url = $"{_baseUrl}/Profile/{ProfileID}";
             newdata["profile_id"] = ProfileID;
             newdata["role"] = UserType;
-            var response = await _httpClient.PostAsJsonAsync(url, newdata);
+            string serial = JsonConvert.SerializeObject(newdata);
+            var actioncontent = new StringContent(serial, Encoding.UTF8, "application/json");
+            var response = await _httpClient.PostAsync(url, actioncontent);
+            //var response = await _httpClient.PostAsJsonAsync(url, newdata);
             string content = await response.Content.ReadAsStringAsync();
             return Ok(content);
         }
@@ -66,7 +69,9 @@ namespace be.Controllers
             string ProfileID = TokenDataRetrieval.GetProfileIDFromToken(authHeader, _tokenValidationParameters);
             string UserType = TokenDataRetrieval.GetProfileRoleFromToken(authHeader, _tokenValidationParameters);
             string url = $"{_baseUrl}/Profile/{ProfileID}";
-            var response = await _httpClient.PatchAsJsonAsync(url, newdata);
+            string serial = JsonConvert.SerializeObject(newdata);
+            var actioncontent = new StringContent(serial, Encoding.UTF8, "application/json");
+            var response = await _httpClient.PatchAsync(url, actioncontent);
             string content = await response.Content.ReadAsStringAsync();
             return Ok(content);
         }
@@ -109,7 +114,9 @@ namespace be.Controllers
             string ProfileID = TokenDataRetrieval.GetProfileIDFromToken(authHeader, _tokenValidationParameters);
             string UserType = TokenDataRetrieval.GetProfileRoleFromToken(authHeader, _tokenValidationParameters);
             string url = $"{_baseUrl}/add_new_application/{ProfileID}";
-            var response = await _httpClient.PostAsJsonAsync(url, newdata);
+            string serial = JsonConvert.SerializeObject(newdata);
+            var actioncontent = new StringContent(serial, Encoding.UTF8, "application/json");
+            var response = await _httpClient.PostAsync(url, actioncontent);
             string content = await response.Content.ReadAsStringAsync();
             return Ok(content);
         }
@@ -132,7 +139,9 @@ namespace be.Controllers
             string ProfileID = TokenDataRetrieval.GetProfileIDFromToken(authHeader, _tokenValidationParameters);
             string UserType = TokenDataRetrieval.GetProfileRoleFromToken(authHeader, _tokenValidationParameters);
             string url = $"{_baseUrl}/Profile/set_quiz_result/{ProfileID}";
-            var response = await _httpClient.PatchAsJsonAsync(url, newdata);
+            string serial = JsonConvert.SerializeObject(newdata);
+            var actioncontent = new StringContent(serial, Encoding.UTF8, "application/json");
+            var response = await _httpClient.PatchAsync(url, actioncontent);
             string content = await response.Content.ReadAsStringAsync();
             return Ok(content);
         }

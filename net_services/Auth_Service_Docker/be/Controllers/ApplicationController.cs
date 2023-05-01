@@ -52,7 +52,9 @@ namespace be.Controllers
             string ProfileID = TokenDataRetrieval.GetProfileIDFromToken(authHeader, _tokenValidationParameters);
             string UserType = TokenDataRetrieval.GetProfileRoleFromToken(authHeader, _tokenValidationParameters);
             string url = $"{_settings.ServiceURLS["ProfileService"]}/add_new_application/{ProfileID}";
-            var response = await _httpClient.PostAsJsonAsync(url, customObject);
+            string serial = JsonConvert.SerializeObject(customObject);
+            var actioncontent = new StringContent(serial, Encoding.UTF8, "application/json");
+            var response = await _httpClient.PostAsync(url, actioncontent);
             string content = await response.Content.ReadAsStringAsync();
             return Ok(content);
         }
@@ -63,7 +65,9 @@ namespace be.Controllers
         {
             var newdata = JsonConvert.DeserializeObject<JObject>(data.ToString());
             var url = $"{_baseUrl}/student_application/{id}";
-            var response = await _httpClient.PatchAsJsonAsync(url, newdata);
+            string serial = JsonConvert.SerializeObject(newdata);
+            var actioncontent = new StringContent(serial, Encoding.UTF8, "application/json");
+            var response = await _httpClient.PatchAsync(url, actioncontent);
             response.EnsureSuccessStatusCode();
             string content = await response.Content.ReadAsStringAsync();
             return Ok(content);
@@ -86,7 +90,9 @@ namespace be.Controllers
         {
             var newdata = JsonConvert.DeserializeObject<JObject>(data.ToString());
             var url = $"{_baseUrl}/student_application_status/{id}";
-            var response = await _httpClient.PatchAsJsonAsync(url, newdata);
+            string serial = JsonConvert.SerializeObject(newdata);
+            var actioncontent = new StringContent(serial, Encoding.UTF8, "application/json");
+            var response = await _httpClient.PatchAsync(url, actioncontent);
             response.EnsureSuccessStatusCode();
             string content = await response.Content.ReadAsStringAsync();
             return Ok(content);
@@ -109,7 +115,9 @@ namespace be.Controllers
         {
             var newdata = JsonConvert.DeserializeObject<JObject>(data.ToString());
             var url = $"{_baseUrl}/student_application_status";
-            var response = await _httpClient.PatchAsJsonAsync(url, newdata);
+            string serial = JsonConvert.SerializeObject(newdata);
+            var actioncontent = new StringContent(serial, Encoding.UTF8, "application/json");
+            var response = await _httpClient.PatchAsync(url, actioncontent);
             response.EnsureSuccessStatusCode();
             string content = await response.Content.ReadAsStringAsync();
             return Ok(content);
@@ -133,7 +141,9 @@ namespace be.Controllers
             }
             var newdata = JsonConvert.DeserializeObject<JObject>(data.ToString());
             var url = $"{_baseUrl}/filter_student_applications";
-            var response = await _httpClient.PostAsJsonAsync(url, newdata);
+            string serial = JsonConvert.SerializeObject(newdata);
+            var actioncontent = new StringContent(serial, Encoding.UTF8, "application/json");
+            var response = await _httpClient.PostAsync(url, actioncontent);
             response.EnsureSuccessStatusCode();
             string content = await response.Content.ReadAsStringAsync();
             return Ok(content);
@@ -142,9 +152,12 @@ namespace be.Controllers
         private async Task<string> get_key(JObject data)
         {
             var url = $"{_baseUrl}/student_application";
-            var response = await _httpClient.PostAsJsonAsync(url, data);
+            string serial = JsonConvert.SerializeObject(data);
+            var actioncontent = new StringContent(serial, Encoding.UTF8, "application/json");
+            var response = await _httpClient.PostAsync(url, actioncontent);
             response.EnsureSuccessStatusCode();
-            var result = await response.Content.ReadFromJsonAsync<JObject>();
+            var result_str = await response.Content.ReadAsStringAsync();
+            var result = JsonConvert.DeserializeObject<JObject>(result_str);
             if ((string)result["status"] == "success" && !String.IsNullOrEmpty((string)result["key"]))
             {
                 return (string)result["key"];
@@ -158,7 +171,8 @@ namespace be.Controllers
         {
             var response = await _httpClient.GetAsync($"{_settings.ServiceURLS["ProfileService"]}/Profile/{ProfileID}/university");
             response.EnsureSuccessStatusCode();
-            var result = await response.Content.ReadFromJsonAsync<JObject>();
+            var result_str = await response.Content.ReadAsStringAsync();
+            var result = JsonConvert.DeserializeObject<JObject>(result_str);
             if (!((string)result["status"] == "success"))
             {
                 return "";
@@ -186,9 +200,12 @@ namespace be.Controllers
             }
             newdata["university"] = field;
             var url = $"{_baseUrl}/appform";
-            var response = await _httpClient.PostAsJsonAsync(url, newdata);
+            string serial = JsonConvert.SerializeObject(newdata);
+            var actioncontent = new StringContent(serial, Encoding.UTF8, "application/json");
+            var response = await _httpClient.PostAsync(url, actioncontent);
             response.EnsureSuccessStatusCode();
-            var result = await response.Content.ReadAsStringAsync();
+            var result_str = await response.Content.ReadAsStringAsync();
+            var result = JsonConvert.DeserializeObject<JObject>(result_str);
             return Ok(result);
         }
 
@@ -211,7 +228,9 @@ namespace be.Controllers
             }
             newdata["university"] = field;
             var url = $"{_baseUrl}/appform";
-            var response = await _httpClient.PatchAsJsonAsync(url, newdata);
+            string serial = JsonConvert.SerializeObject(newdata);
+            var actioncontent = new StringContent(serial, Encoding.UTF8, "application/json");
+            var response = await _httpClient.PatchAsync(url, actioncontent);
             response.EnsureSuccessStatusCode();
             var result = await response.Content.ReadAsStringAsync();
             return Ok(result);
