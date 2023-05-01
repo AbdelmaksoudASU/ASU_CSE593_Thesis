@@ -1,0 +1,39 @@
+[
+    {
+        "university": "AUC",
+        "programs": ["*"],
+        "ApplicationFormSchema": [
+            {"inputName": "student_name", "inputType": "short_text"},
+            {"inputName": "id_number", "inputType": "number"},
+            {"inputName": "id_document", "inputType": "file_link"},
+            {"inputName": "address", "inputType": "short_text"},
+            {"inputName": "email", "inputType": "email"},
+            {"inputName": "high_school_name", "inputType": "short_text"},
+            {"inputName": "high_school_certificate_type", "inputType": "radio_selection", 
+            "inputValues": ["Thanweya Amma","IGCSE", "American", "IB", "Stem"]},
+            {"inputName": "high_school_certificate_score", "inputType": "short_text"},
+            {"inputName": "transcript", "inputType": "file_link"},
+            {"inputName": "personal_essay", "inputType": "file_link_text"},
+            {"inputName": "graduation_certificate", "inputType": "file_link"},
+            {"inputName": "recommendation_letter", "inputType": "file_link_text"},
+            {"inputName": "extra_achievements", "inputType": "checkbox_selection", 
+            "inputValues": ["Sports Achievments", "Academic Achievment", "Art Achievment", "Competition"]},
+            {"inputName": "supporting_documents", "inputType": "file_link_text__list__"}
+        ]
+    },    
+    {
+        "university": "GUC",
+        "programs": ["Fine Arts", "Applied Arts"],
+        "ApplicationFormSchema": [
+          {"inputName": "student_name", "inputType": "short_text"},
+          {"inputName": "id_document", "inputType": "file_link"},
+          {"inputName": "military_service_status", "inputType": "radio_selection", 
+          "inputValues": ["Exempted", "Delayed", "Finished"]},
+          {"inputName": "military_service_document", "inputType": "file_link"},
+          {"inputName": "transcript", "inputType": "file_link"},
+          {"inputName": "art_exam_score_document", "inputType": "file_link"},
+          {"inputName": "graduation_certificate", "inputType": "file_link"},
+          {"inputName": "supporting_documents", "inputType": "file_link_text__list__"}        ]
+    }     
+        
+]

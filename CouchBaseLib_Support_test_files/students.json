@@ -1,0 +1,81 @@
+[{
+    "profile_id": "8B1DD851DD4840A7BA5AF5FC94194D68",
+    "role": "student",
+    "name": "Jane Smith",
+    "username": "jsmith",
+    "id_number": "26705109102784",
+    "address":"25 Nasr Street, Maadi, Cairo",
+    "email_address": "janesmith@example.com",
+    "high_school_name": "Maadi High School",
+    "high_school_certificate_type": "IGCSE",
+    "high_school_certificate_score": "130",
+    "transcript": {"document":"http://example.com/transcript.pdf","type": "link"},
+    "graduation_certificate": {"document":"base64image","type": "base64"},
+    "personal_essay": {"document":
+    "I am passionate about technology and programming and believe this program is the best fit for my career goals.",
+    "type": "text"},
+    "birth_certificate": {"document":"base64:birth_certificate2.png","type": "base64"},
+    "id_document": {"document":"base64image","type": "base64"},
+    "additional_documents": {
+        "art_achievements": {"document":"base64:art_cert.pdf","type": "base64"},
+        "recommendation_letter": {"document":"http://example.com/recommendation.pdf","type": "link"}
+    },
+    "quiz_result": {
+        "top1program": "Computer Science",
+        "top2program": "Computer Engineering",
+        "top3program": "Physics",
+        "top4program": "Electronics Engineering",
+        "top5program": "Math"
+    },
+    "applications": [
+        {
+            "university": "AUC",
+            "program": "Computer Science",
+            "application_id": "C7B28B2EA68C40BEA14176AF7CCA034E"
+        },
+        {
+            "university": "BUE",
+            "program": "Computer Engineering",
+            "Application IDs": "A82D999F170B49FAB948038C6ED67469"
+        }
+    ]
+},
+{
+    "profile_id": "CBA4B817C06E4C7E90EA79B5AE277F6B",
+    "role": "student",
+    "name": "Judy June",
+    "username": "jjune",
+    "id_number": "26705109102784",
+    "address":"225 Joseph Street, Heliopolis, Cairo",
+    "email_address": "jjune@example.com",
+    "high_school_name": "Saint Maria High School",
+    "high_school_certificate_type": "IGCSE",
+    "high_school_certificate_score": "130",
+    "transcript": {"document":"http://example.com/transcript.pdf","type": "link"},
+    "graduation_certificate": {"document":"base64image","type": "base64"},
+    "personal_essay": {"document":
+    "I am passionate about technology and programming and believe this program is the best fit for my career goals.",
+    "type": "text"},
+    "birth_certificate": {"document":"base64:birth_certificate2.png","type": "base64"},
+    "id_document": {"document":"base64image","type": "base64"},
+    "additional_documents": {
+        "art_achievements": {"document":"base64:art_cert.pdf","type": "base64"},
+        "music_achievements": {"document":"base64:music_cert.pdf", "type": "base64"},
+        "recommendation_letter": {"document":"http://example.com/recommendation.pdf","type": "link"}
+    },
+    "quiz_result": {
+        "top1program": "Music",
+        "top2program": "Theater",
+        "top3program": "Film",
+        "top4program": "Art",
+        "top5program": "Dance"
+    },
+    "applications": [
+        {
+            "university": "GUC",
+            "program": "Applied Arts",
+            "Application ID": "FDA796647AD040689C69E278528F4E41"
+        }
+    ]
+}
+]

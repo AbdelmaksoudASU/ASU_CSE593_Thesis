@@ -1,0 +1,28 @@
+[
+    {
+        "profile_id": "938E88B5BF2A4B11A2CA4D86BD27BDFD",
+        "role": "content_creator",
+        "name": "Sarah Jane",
+        "university": "GUC",
+        "accessible_university_programs": ["GUC Applied Arts", "GUC Fine Arts", "BUE Applied Arts", "BUE Fine Arts"],
+        "accessible_programs": ["Applied Arts", "Fine Arts"],
+        "accessible_universities": ["GUC", "BUE"]
+    },
+    {
+        "profile_id": "E194AF9911CC41E98BC08FE90D47CC06",
+        "role": "content_creator",
+        "name": "Lena Chen",
+        "accessible_university_programs": [],
+        "accessible_programs": ["Chemical Engineering", "Mechanical Engineering", 
+        "Civil Engineering", "Environmental Science"],
+        "accessible_universities": []
+    },
+    {
+        "profile_id": "5372D2F1C14F4AEEAF012855D01EDE92",
+        "role": "content_creator",
+        "name": "Obama AUC",
+        "accessible_university_programs": ["*"],
+        "accessible_programs": [],
+        "accessible_universities": ["AUC"]
+    }
+]

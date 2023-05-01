@@ -1,0 +1,23 @@
+[
+    {
+        "profile_id": "938E88B5BF2A4B11A2CA4D86BD27ADFD",
+        "role": "UniAdmin",
+        "name": "Sarah Lee",
+        "university": "GUC",
+        "accessible_university_programs": ["Applied Arts", "Fine Arts"]
+    },
+    {
+        "profile_id": "E194AF9911CC41E98BC08FE90D47EC06",
+        "role": "UniAdmin",
+        "name": "Emily Chen",
+        "university": "University of ABC",
+        "accessible_university_programs": ["Chemical Engineering", "Mechanical Engineering", "Civil Engineering", "Environmental Science"]
+    },
+    {
+        "profile_id": "5372D2F1C14F4AEEAF012855D01E3E92",
+        "role": "UniAdmin",
+        "name": "Michael Johnson",
+        "university": "AUC",
+        "accessible_university_programs": ["*"]
+    }
+]

@@ -1,0 +1,46 @@
+[
+    {
+        "application_id":"C7B28B2EA68C40BEA14176AF7CCA034E",
+        "university": "AUC",
+        "program": "Computer Science",
+        "semester_year":"fall23",
+        "status": "under review",
+        "ApplicationFormResponse": {
+            "student_name": "Jane Smith",
+            "id_number": "26705109102784",
+            "id_document":{"document":"base64image","type": "base64"},
+            "address":"25 Nasr Street, Maadi, Cairo",
+            "email_address": "janesmith@example.com",
+            "high_school_name": "Maadi High School",
+            "high_school_certificate_type": "IGCSE",
+            "high_school_certificate_score": "130",
+            "transcript": {"document":"http://example.com/transcript.pdf","type": "link"},
+            "personal_essay": {"document":
+            "I am passionate about technology and programming and believe this program is the best fit for my career goals.",
+            "type": "text"},
+            "graduation_certificate": {"document":"base64image","type": "base64"},
+            "recommendation_letter": {"document":"http://example.com/recommendation.pdf","type": "link"},
+            "extra_achievements":["Sports Achievments", "Academic Achievment"],
+            "supporting_documents": [{"document":"http://example.com/AcademicAchievmentCertificate.pdf","type": "link"}, 
+            {"document":"http://example.com/Sports.pdf","type": "link"}]
+        }
+    },
+    {
+        "application_id":"FDA796647AD040689C69E278528F4E41",
+        "university": "GUC",
+        "program": "Applied Arts",
+        "semester_year":"fall23",
+        "status": "under review",
+        "ApplicationFormResponse": {
+            "student_name": "Judy June",
+            "id_document":{"document":"base64image","type": "base64"},
+            "military_service_status":"Exempted",
+            "military_service_document":{"document":"base64image","type": "base64"},
+            "transcript": {"document":"http://example.com/transcript.pdf","type": "link"},
+            "art_exam_score_document": {"document":"http://example.com/recommendation.pdf","type": "link"},
+            "graduation_certificate": {"document":"base64image","type": "base64"},
+            "supporting_documents": [{"document":"http://example.com/AcademicAchievmentCertificate.pdf","type": "link"}]
+        }
+    }
+    
+]

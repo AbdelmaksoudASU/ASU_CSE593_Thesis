@@ -1,0 +1,58 @@
+version: '3.9'
+
+services:   
+  db:
+    image: mcr.microsoft.com/mssql/server
+    environment:
+      SA_PASSWORD: "aabdelm4@AUC"
+      ACCEPT_EULA: "Y"
+      
+    volumes:
+      - sql:/var/opt/mssql/
+
+    networks:
+      localnetwork:
+      
+  be:
+    build: ./be
+    environment:
+      DatabaseConnectionString: "Server=db;Database=AuthDB;TrustServerCertificate=True;User Id=SA;Password=aabdelm4@AUC;"
+      JWTSecret: "this-is-just-a-strong-key"
+      JWTIssuer: "app"
+      JWTAudience: "user"
+      DockerEnv: "docker"
+      QuizService: "http://127.0.0.1:1338",
+      ApplicationService: "http://127.0.0.1:1337",
+      ProfileService: "http://127.0.0.1:1340",
+      UniversitiesProgramsService: "http://127.0.0.1:1341"
+
+    depends_on:
+      - db
+    networks:
+      main:
+        aliases:
+          - be
+      localnetwork:
+      
+  nginx:
+    build: ./nginx
+    ports:
+      - 1339:80
+    depends_on:
+      - be
+    networks:
+      main:
+        aliases:
+          - nginx
+
+volumes:
+  sql:
+  
+networks:
+  localnetwork:
+  main:
+
+
+
+
+

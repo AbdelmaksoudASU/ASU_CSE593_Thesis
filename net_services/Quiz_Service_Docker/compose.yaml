@@ -1,0 +1,51 @@
+version: '3.9'
+
+services:   
+  db:
+    container_name: sql-server-db
+    image: mcr.microsoft.com/mssql/server
+    environment:
+      SA_PASSWORD: "aabdelm4@AUC"
+      ACCEPT_EULA: "Y"
+      
+    volumes:
+      - sql:/var/opt/mssql/
+
+    networks:
+      localnetwork:
+      
+  be:
+    build: ./be
+    environment:
+      DatabaseConnectionString: "Server=db;Database=QuizDB;TrustServerCertificate=True;User Id=SA;Password=aabdelm4@AUC;"
+      DockerEnv: "docker"
+    depends_on:
+      - db
+    networks:
+      main:
+        aliases:
+          - be
+      localnetwork:
+      
+  nginx:
+    build: ./nginx
+    ports:
+      - 1338:80
+    depends_on:
+      - be
+    networks:
+      main:
+        aliases:
+          - nginx
+
+volumes:
+  sql:
+  
+networks:
+  localnetwork:
+  main:
+
+
+
+
+

@@ -1,0 +1,26 @@
+version: '3.9'
+
+services:   
+  db:
+    image: mcr.microsoft.com/mssql/server
+    ports:
+      - "1433:1433"
+    environment:
+      SA_PASSWORD: "aabdelm4@AUC"
+      ACCEPT_EULA: "Y"
+      
+    volumes:
+      - sql:/var/opt/mssql/
+
+    networks:
+      localnetwork:
+      
+volumes:
+  sql:  
+
+networks:
+  localnetwork:
+
+
+
+

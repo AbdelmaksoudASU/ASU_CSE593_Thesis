@@ -1,0 +1,48 @@
+version: '3.9'
+
+services:
+  be:
+    build: ./be
+    command: gunicorn --bind 0.0.0.0:5000 wsgi:app
+    expose:
+      - 5000
+    env_file:
+      - ./be/.env
+    depends_on:
+      - db
+    networks:
+      main:
+        aliases:
+          - be
+      dummy:
+      
+  db:
+    image: couchbase/server:community
+    env_file:
+      - ./db/.env
+    networks:
+      - dummy
+    volumes:
+      - couch:/opt/couchbase/var/
+    ports:
+      - 28091:8091
+    
+  nginx:
+    build: ./nginx
+    ports:
+      - 1337:80
+    depends_on:
+      - be
+    networks:
+      main:
+        aliases:
+          - nginx
+
+networks:
+  main:
+  dummy:
+  
+volumes:
+  couch:
+
+

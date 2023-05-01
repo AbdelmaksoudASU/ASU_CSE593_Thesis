@@ -1,0 +1,318 @@
+insert into UniversitiesPrograms (key, value)
+values ( "AUC Electronics Engineering",
+  {
+    "UniversityProgramName": "AUC Electronics Engineering",
+	"UniversityName": "AUC",
+	"ProgramName": "Electronics Engineering",
+	"CostInDate": {"Cost": 180000, "Date": "2023-1-1"},
+	"UniqueAddedValue": "More opportunities outside Engineering like consulting",
+	"AdmissionRequirements":"GPA > 3.5 or score above 90% from Gate"	
+}
+),("AUC Computer Science",
+{
+    "UniversityProgramName": "AUC Computer Science",
+	"UniversityName": "AUC",
+	"ProgramName": "Computer Science",
+	"CostInDate": {"Cost": 160000, "Date": "2023-1-1"},
+	"UniqueAddedValue": "Great Mix between Science and Engineering best of both worlds",
+	"AdmissionRequirements":"GPA > 3.5 or score above 90% from Gate"	
+}
+),("AUC Accounting",
+{
+    "UniversityProgramName": "AUC Accounting",
+	"UniversityName": "AUC",
+	"ProgramName": "Accounting",
+	"CostInDate": {"Cost": 150000, "Date": "2023-1-1"},
+	"UniqueAddedValue": "great reputation and Opportunities in Big Companies",
+	"AdmissionRequirements":"GPA > 3.0 or score above 80% from Gate"	
+}
+),("AUC Psychology",
+{
+    "UniversityProgramName": "AUC Psychology",
+	"UniversityName": "AUC",
+	"ProgramName": "Psychology",
+	"CostInDate": {"Cost": 150000, "Date": "2023-1-1"},
+	"UniqueAddedValue": "Best in Middle East",
+	"AdmissionRequirements":"B or Above in introduction to Psychology"	
+}
+),("GUC Interior Design",
+{
+    "UniversityProgramName": "GUC Interior Design",
+	"UniversityName": "GUC",
+	"ProgramName": "Interior Design",
+	"CostInDate": {"Cost": 110000, "Date": "2023-1-1"},
+	"UniqueAddedValue": "Best program According to employers in Egypt",
+	"AdmissionRequirements":"score above 90% or As Math in IG"	
+}
+),("GUC Computer Science",
+{
+    "UniversityProgramName": "GUC Computer Science",
+	"UniversityName": "GUC",
+	"ProgramName": "Computer Science",
+	"CostInDate": {"Cost": 100000, "Date": "2023-1-1"},
+	"UniqueAddedValue": "Strong Emphasis on Software Engineering",
+	"AdmissionRequirements":"core above 92% or at least B in As Math in IG"	
+}
+),("MUST Computer Science",
+{
+    "UniversityProgramName": "MUST Computer Science",
+	"UniversityName": "MUST",
+	"ProgramName": "Computer Science",
+	"CostInDate": {"Cost": 70000, "Date": "2023-1-1"},
+	"UniqueAddedValue": "Great Mix with IT and networking and Emphasis on netwroking",
+	"AdmissionRequirements":"score above 90%"	
+}
+),("AAST Electronics Engineering",
+{
+    "UniversityProgramName": "AAST Electronics Engineering",
+	"UniversityName": "AAST",
+	"ProgramName": "Electronics Engineering",
+	"CostInDate": {"Cost": 80000, "Date": "2023-1-1"},
+	"UniqueAddedValue": "Higher Emphasis on Communication and mobile operators",
+	"AdmissionRequirements":"score above 85%"	
+}
+),("BUE Psychology",
+{
+    "UniversityProgramName": "BUE Psychology",
+	"UniversityName": "BUE",
+	"ProgramName": "Psychology",
+	"CostInDate": {"Cost": 90000, "Date": "2023-1-1"},
+	"UniqueAddedValue": "Great preparation for school environemnt and internships in schools",
+	"AdmissionRequirements":"score above 75%"	
+}
+);
+
+insert into applications (key, value)
+values ( "C7B28B2EA68C40BEA14176AF7CCA034E",
+  {
+        "application_id":"C7B28B2EA68C40BEA14176AF7CCA034E",
+        "university": "AUC",
+        "program": "Computer Science",
+        "semester_year":"fall23",
+        "status": "under review",
+        "ApplicationFormResponse": {
+            "student_name": "Jane Smith",
+            "id_number": "26705109102784",
+            "id_document":{"document":"base64image","type": "base64"},
+            "address":"25 Nasr Street, Maadi, Cairo",
+            "email_address": "janesmith@example.com",
+            "high_school_name": "Maadi High School",
+            "high_school_certificate_type": "IGCSE",
+            "high_school_certificate_score": "130",
+            "transcript": {"document":"http://example.com/transcript.pdf","type": "link"},
+            "personal_essay": {"document":
+            "I am passionate about technology and programming and believe this program is the best fit for my career goals.",
+            "type": "text"},
+            "graduation_certificate": {"document":"base64image","type": "base64"},
+            "recommendation_letter": {"document":"http://example.com/recommendation.pdf","type": "link"},
+            "extra_achievements":["Sports Achievments", "Academic Achievment"],
+            "supporting_documents": [{"document":"http://example.com/AcademicAchievmentCertificate.pdf","type": "link"}, 
+            {"document":"http://example.com/Sports.pdf","type": "link"}]
+        }
+    }),("FDA796647AD040689C69E278528F4E41",
+    {
+        "application_id":"FDA796647AD040689C69E278528F4E41",
+        "university": "GUC",
+        "program": "Applied Arts",
+        "semester_year":"fall23",
+        "status": "under review",
+        "ApplicationFormResponse": {
+            "student_name": "Judy June",
+            "id_document":{"document":"base64image","type": "base64"},
+            "military_service_status":"Exempted",
+            "military_service_document":{"document":"base64image","type": "base64"},
+            "transcript": {"document":"http://example.com/transcript.pdf","type": "link"},
+            "art_exam_score_document": {"document":"http://example.com/recommendation.pdf","type": "link"},
+            "graduation_certificate": {"document":"base64image","type": "base64"},
+            "supporting_documents": [{"document":"http://example.com/AcademicAchievmentCertificate.pdf","type": "link"}]
+        }
+    }
+);
+
+
+insert into profiles (key, value)
+values ( "8B1DD851DD4840A7BA5AF5FC94194D68",
+  {
+    "profile_id": "8B1DD851DD4840A7BA5AF5FC94194D68",
+    "role": "student",
+    "name": "Jane Smith",
+    "username": "jsmith",
+    "id_number": "26705109102784",
+    "address":"25 Nasr Street, Maadi, Cairo",
+    "email_address": "janesmith@example.com",
+    "high_school_name": "Maadi High School",
+    "high_school_certificate_type": "IGCSE",
+    "high_school_certificate_score": "130",
+    "transcript": {"document":"http://example.com/transcript.pdf","type": "link"},
+    "graduation_certificate": {"document":"base64image","type": "base64"},
+    "personal_essay": {"document":
+    "I am passionate about technology and programming and believe this program is the best fit for my career goals.",
+    "type": "text"},
+    "birth_certificate": {"document":"base64:birth_certificate2.png","type": "base64"},
+    "id_document": {"document":"base64image","type": "base64"},
+    "additional_documents": {
+        "art_achievements": {"document":"base64:art_cert.pdf","type": "base64"},
+        "recommendation_letter": {"document":"http://example.com/recommendation.pdf","type": "link"}
+    },
+    "quiz_result": {
+        "top1program": "Computer Science",
+        "top2program": "Computer Engineering",
+        "top3program": "Physics",
+        "top4program": "Electronics Engineering",
+        "top5program": "Math"
+    },
+    "applications": [
+        {
+            "university": "AUC",
+            "program": "Computer Science",
+            "application_id": "C7B28B2EA68C40BEA14176AF7CCA034E"
+        },
+        {
+            "university": "BUE",
+            "program": "Computer Engineering",
+            "Application IDs": "A82D999F170B49FAB948038C6ED67469"
+        }
+    ]
+}),
+ ("938E88B5BF2A4B11A2CA4D86BD27BDFD",{
+        "profile_id": "938E88B5BF2A4B11A2CA4D86BD27BDFD",
+        "role": "content_creator",
+        "name": "Sarah Jane",
+        "university": "GUC",
+        "accessible_university_programs": ["GUC Applied Arts", "GUC Fine Arts", "BUE Applied Arts", "BUE Fine Arts"],
+        "accessible_programs": ["Applied Arts", "Fine Arts"],
+        "accessible_universities": ["GUC", "BUE"]
+    }),
+("E194AF9911CC41E98BC08FE90D47CC06",{
+        "profile_id": "E194AF9911CC41E98BC08FE90D47CC06",
+        "role": "content_creator",
+        "name": "Lena Chen",
+        "accessible_university_programs": [],
+        "accessible_programs": ["Chemical Engineering", "Mechanical Engineering", 
+        "Civil Engineering", "Environmental Science"],
+        "accessible_universities": []
+}),
+("5372D2F1C14F4AEEAF012855D01EDE92",{
+        "profile_id": "5372D2F1C14F4AEEAF012855D01EDE92",
+        "role": "content_creator",
+        "name": "Obama AUC",
+        "accessible_university_programs": ["*"],
+        "accessible_programs": [],
+        "accessible_universities": ["AUC"]
+})
+("938E88B5BF2A4B11A2CA4D86BD27ADFD",{
+        "profile_id": "938E88B5BF2A4B11A2CA4D86BD27ADFD",
+        "role": "UniAdmin",
+        "name": "Sarah Lee",
+        "university": "GUC",
+        "accessible_university_programs": ["Applied Arts", "Fine Arts"]
+    }),
+    ("E194AF9911CC41E98BC08FE90D47EC06",{
+        "profile_id": "E194AF9911CC41E98BC08FE90D47EC06",
+        "role": "UniAdmin",
+        "name": "Emily Chen",
+        "university": "University of ABC",
+        "accessible_university_programs": ["Chemical Engineering", "Mechanical Engineering", "Civil Engineering", "Environmental Science"]
+    }),
+    ("5372D2F1C14F4AEEAF012855D01E3E92",{
+        "profile_id": "5372D2F1C14F4AEEAF012855D01E3E92",
+        "role": "UniAdmin",
+        "name": "Michael Johnson",
+        "university": "AUC",
+        "accessible_university_programs": ["*"]
+    }),
+("CBA4B817C06E4C7E90EA79B5AE277F6B",
+    {
+    "profile_id": "CBA4B817C06E4C7E90EA79B5AE277F6B",
+    "role": "student",
+    "name": "Judy June",
+    "username": "jjune",
+    "id_number": "26705109102784",
+    "address":"225 Joseph Street, Heliopolis, Cairo",
+    "email_address": "jjune@example.com",
+    "high_school_name": "Saint Maria High School",
+    "high_school_certificate_type": "IGCSE",
+    "high_school_certificate_score": "130",
+    "transcript": {"document":"http://example.com/transcript.pdf","type": "link"},
+    "graduation_certificate": {"document":"base64image","type": "base64"},
+    "personal_essay": {"document":
+    "I am passionate about technology and programming and believe this program is the best fit for my career goals.",
+    "type": "text"},
+    "birth_certificate": {"document":"base64:birth_certificate2.png","type": "base64"},
+    "id_document": {"document":"base64image","type": "base64"},
+    "additional_documents": {
+        "art_achievements": {"document":"base64:art_cert.pdf","type": "base64"},
+        "music_achievements": {"document":"base64:music_cert.pdf", "type": "base64"},
+        "recommendation_letter": {"document":"http://example.com/recommendation.pdf","type": "link"}
+    },
+    "quiz_result": {
+        "top1program": "Music",
+        "top2program": "Theater",
+        "top3program": "Film",
+        "top4program": "Art",
+        "top5program": "Dance"
+    },
+    "applications": [
+        {
+            "university": "GUC",
+            "program": "Applied Arts",
+            "Application ID": "FDA796647AD040689C69E278528F4E41"
+        }
+    ]
+}
+);
+
+
+
+
+insert into schemas (key, value)
+values ( "AUC",
+        {
+        "university": "AUC",
+        "programs": ["*"],
+        "ApplicationFormSchema": [
+            {"inputName": "student_name", "inputType": "short_text"},
+            {"inputName": "id_number", "inputType": "number"},
+            {"inputName": "id_document", "inputType": "file_link"},
+            {"inputName": "address", "inputType": "short_text"},
+            {"inputName": "email", "inputType": "email"},
+            {"inputName": "high_school_name", "inputType": "short_text"},
+            {"inputName": "high_school_certificate_type", "inputType": "radio_selection", 
+            "inputValues": ["Thanweya Amma","IGCSE", "American", "IB", "Stem"]},
+            {"inputName": "high_school_certificate_score", "inputType": "short_text"},
+            {"inputName": "transcript", "inputType": "file_link"},
+            {"inputName": "personal_essay", "inputType": "file_link_text"},
+            {"inputName": "graduation_certificate", "inputType": "file_link"},
+            {"inputName": "recommendation_letter", "inputType": "file_link_text"},
+            {"inputName": "extra_achievements", "inputType": "checkbox_selection", 
+            "inputValues": ["Sports Achievments", "Academic Achievment", "Art Achievment", "Competition"]},
+            {"inputName": "supporting_documents", "inputType": "file_link_text__list__"}
+        ]
+    }),("GUC",
+    {
+        "university": "GUC",
+        "programs": ["Fine Arts", "Applied Arts"],
+        "ApplicationFormSchema": [
+          {"inputName": "student_name", "inputType": "short_text"},
+          {"inputName": "id_document", "inputType": "file_link"},
+          {"inputName": "military_service_status", "inputType": "radio_selection", 
+          "inputValues": ["Exempted", "Delayed", "Finished"]},
+          {"inputName": "military_service_document", "inputType": "file_link"},
+          {"inputName": "transcript", "inputType": "file_link"},
+          {"inputName": "art_exam_score_document", "inputType": "file_link"},
+          {"inputName": "graduation_certificate", "inputType": "file_link"},
+          {"inputName": "supporting_documents", "inputType": "file_link_text__list__"}        ]
+    }    
+);
+
+
+
+
+notes:
+the id is the key in all json except schemas still searching for appropriate one:
+key source comes from authentication in profiles. and comes from applying in student
+in these cases these were the only ones interested in the key (the key source/creator is the consumer/owner) 
+the case of uniadmin edits is not a problem because admin can query but cannot select particular entry.
+
+the problem with schemas though is that they need to be selected in particular by students
+students only provide university and program id
