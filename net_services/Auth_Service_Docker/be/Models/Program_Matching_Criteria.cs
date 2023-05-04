@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Reflection;
 
-namespace be.Models
+namespace Quiz_Service.Models
 {
     public class Program_Matching_Criteria
     {
@@ -9,16 +9,16 @@ namespace be.Models
         public string ProgramId { get; set; } = string.Empty;
         public string ProgramName { get; set; } = string.Empty;
 
-        public double Sum = 0;
+        public double Sum { get; set; } = 0;
 
         public void Fix_Sum()
         {
+            this.Sum = 0;
             PropertyInfo[] properties = typeof(Program_Matching_Criteria).GetProperties();
             foreach (PropertyInfo property in properties)
             {
                 if (!(property.Name == "Sum" || property.Name == "ProgramName" || property.Name == "ProgramId"))
                 {
-                    this.Sum = 0;
                     this.Sum += (double)property.GetValue(this);
                 }
             }
@@ -165,6 +165,7 @@ namespace be.Models
             Value_leadership_training_and_experiences = 0;
             Rely_on_and_trust_in_your_peers_camaraderie = 0;
             Provide_nursing_andor_healthcare_related_services = 0;
+            Sum = 0;
         }
 
         public double Math { get; set; }

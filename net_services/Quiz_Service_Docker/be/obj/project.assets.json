@@ -3812,19 +3812,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Owner\\.nuget\\packages\\": {}
+    "C:\\Users\\Dell-Vostro\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\old lap\\e\\educational\\college\\Arizona masters\\Asu\\spring 2023\\Thesis\\Quiz_Service_Docker\\be\\be.csproj",
+      "projectUniqueName": "C:\\Users\\Dell-Vostro\\Desktop\\thesis\\ASU_CSE593_Thesis\\net_services2\\Quiz_Service_Docker\\be\\be.csproj",
       "projectName": "be",
-      "projectPath": "D:\\old lap\\e\\educational\\college\\Arizona masters\\Asu\\spring 2023\\Thesis\\Quiz_Service_Docker\\be\\be.csproj",
-      "packagesPath": "C:\\Users\\Owner\\.nuget\\packages\\",
-      "outputPath": "D:\\old lap\\e\\educational\\college\\Arizona masters\\Asu\\spring 2023\\Thesis\\Quiz_Service_Docker\\be\\obj\\",
+      "projectPath": "C:\\Users\\Dell-Vostro\\Desktop\\thesis\\ASU_CSE593_Thesis\\net_services2\\Quiz_Service_Docker\\be\\be.csproj",
+      "packagesPath": "C:\\Users\\Dell-Vostro\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Dell-Vostro\\Desktop\\thesis\\ASU_CSE593_Thesis\\net_services2\\Quiz_Service_Docker\\be\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Owner\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Dell-Vostro\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3832,7 +3832,8 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {},
+        "https://fotopianugets.azurewebsites.net/nuget": {}
       },
       "frameworks": {
         "net6.0": {

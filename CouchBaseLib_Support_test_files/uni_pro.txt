@@ -1,0 +1,30 @@
+{
+	"ProgramName":"Electronics Engineering",
+	"VideoLink": "https://www.youtube.com/watch?v=_gMIvQ45IeE",
+	"FurtherReadingLinks":["https://www.britannica.com/technology/electrical-and-electronics-engineering", "https://en.wikipedia.org/wiki/Electronic_engineering"],
+	"ProgramDescription": "you work with circuits and electronics and learn troubleshooting",
+	"ExpectedPay": 15000,
+	"Companies":["Vodafone", "Amazon"],
+	"Jobs": ["Network Engineer"],
+	"Skills": ["Troubleshooting"]
+}
+
+{
+	"UniversityName":"AUC",
+	"TransportationServices": "Bus service",
+	"EducationalQuality": "Excellent quality top in Egypt",
+	"ScholarshipOptions": "general providers like Elghourair and ministry of education, need based financial aid, 50% for athletics and academic excellence",
+	"Dorms": [{"Name": "AUC 5th avenu dorm", "Address":"AUC Avenue, 5th Avenu, New Cairo", "Latitude":30.0203923031357, "Longitude": 31.49909212461133}],
+	"Campuses": [{"Name": "AUC 5th avenu campus", "Address":"AUC Avenue, 5th Avenu, New Cairo", "Latitude":30.0203923031357, "Longitude": 31.49909212461133},
+		{"Name": "AUC Tahrir campus", "Address":"Tahrir Square, Abdeen, Cairo", "Latitude":30.042911072951288, "Longitude": 31.23882380237697}],
+	"GeneralAdmissionRequirements": ["Proof of 12 years of Schooling", "Personal Essay", "High School Graduation", "Filling University application", "paying first fee installment"]	
+}
+
+{
+    	"UniversityProgramName": "AUC Accounting",
+	"UniversityName": "AUC",
+	"ProgramName": "Accounting",
+	"CostInDate": {"Cost": 150000, "Date": "2023-1-1"},
+	"UniqueAddedValue": "great reputation and Opportunities in Big Companies",
+	"AdmissionRequirements":"GPA > 3.0 or score above 80% from Gate"	
+}

@@ -44,7 +44,7 @@ namespace be.Controllers
                 return BadRequest("failed to create application");
             }
             JObject customObject = new JObject();
-            customObject["app_id"] = key;
+            customObject["app_id"] = Guid.NewGuid().ToString();
             customObject["university"] = newdata["university"];
             customObject["program"] = newdata["program"];
 
@@ -204,8 +204,8 @@ namespace be.Controllers
             var actioncontent = new StringContent(serial, Encoding.UTF8, "application/json");
             var response = await _httpClient.PostAsync(url, actioncontent);
             response.EnsureSuccessStatusCode();
-            var result_str = await response.Content.ReadAsStringAsync();
-            var result = JsonConvert.DeserializeObject<JObject>(result_str);
+            var result = await response.Content.ReadAsStringAsync();
+            //var result = JsonConvert.DeserializeObject<JObject>(result_str);
             return Ok(result);
         }
 

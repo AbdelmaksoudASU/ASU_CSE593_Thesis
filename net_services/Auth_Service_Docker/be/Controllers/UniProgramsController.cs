@@ -37,6 +37,7 @@ namespace be.Controllers
         [Authorize]
         public async Task<IActionResult> CreateEducationalEntity(string type, string id, [FromBody] object data)
         {
+            var newdata = JsonConvert.DeserializeObject<JObject>(data.ToString());
             var authHeader = Request.Headers["Authorization"];
             string ProfileID = TokenDataRetrieval.GetProfileIDFromToken(authHeader, _tokenValidationParameters);
             string UserType = TokenDataRetrieval.GetProfileRoleFromToken(authHeader, _tokenValidationParameters);
@@ -45,13 +46,13 @@ namespace be.Controllers
                 return BadRequest("you do not have access");
             }
             var response = await _httpClient.GetAsync(
-                $"{_settings.ServiceURLS["ProfileService"]}/Profile/{ProfileID}/check_accessibilty/{type}/{id}");
+                $"{_settings.ServiceURLS["ProfileService"]}/Profile/{ProfileID}/check_accessibilty/{"accessible_"+type}/{id}");
             response.EnsureSuccessStatusCode();
             var result_str = await response.Content.ReadAsStringAsync();
             var result = JsonConvert.DeserializeObject<JObject>(result_str);
             if ((string)result["status"] == "success" && (bool)result["result"])
             {
-                var json = JsonConvert.SerializeObject(data);
+                var json = JsonConvert.SerializeObject(newdata);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
                 response = await _httpClient.PostAsync($"{_baseUrl}/EducationalEntity/{type}/{id}", content);
                 response.EnsureSuccessStatusCode();
@@ -98,8 +99,8 @@ namespace be.Controllers
         public async Task<IActionResult> GetEducationalEntity(string type, string id)
         {
             var response = await _httpClient.GetAsync($"{_baseUrl}/EducationalEntity/{type}/{id}");
-
-            return Ok(await response.Content.ReadAsStringAsync());
+            var result = await response.Content.ReadAsStringAsync();
+            return Ok(result);
         }
 
         [HttpGet("/EducationalEntity/{type}")]

@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Primitives;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
+using Quiz_Service.Models;
 using System.IdentityModel.Tokens.Jwt;
 using System.Net.Http;
 using System.Text;
@@ -29,12 +30,23 @@ namespace be.Controllers
 
        
 
-        [HttpPost("program")]
+        [HttpPost("programs")]
         [Authorize]
-        public async Task<ActionResult<string>> SaveToDB(Program_Matching_Criteria program)
+        public async Task<ActionResult<string>> SaveToDB(List<Program_Matching_Criteria> program)
         {
             var authHeader = Request.Headers["Authorization"];
             string ProfileID = TokenDataRetrieval.GetProfileIDFromToken(authHeader,_tokenValidationParameters);
+            var response = await _httpClient.PostAsJsonAsync($"{_baseUrl}/api/QuizDB/programs", program);
+            response.EnsureSuccessStatusCode();
+            return Ok(await response.Content.ReadAsStringAsync());
+        }
+
+        [HttpPost("program")]
+        [Authorize]
+        public async Task<ActionResult<string>> SavepToDB(Program_Matching_Criteria program)
+        {
+            var authHeader = Request.Headers["Authorization"];
+            string ProfileID = TokenDataRetrieval.GetProfileIDFromToken(authHeader, _tokenValidationParameters);
             var response = await _httpClient.PostAsJsonAsync($"{_baseUrl}/api/QuizDB/program", program);
             response.EnsureSuccessStatusCode();
             return Ok(await response.Content.ReadAsStringAsync());
